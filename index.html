@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программурки</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .light-mode {
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .nav-tab {
+            transition: all 0.3s;
+        }
+
+        .nav-tab:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-tab.active {
+            border-bottom: 3px solid var(--accent);
+            background-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Темные варианты градиентов */
+        .bg-gradient-to-br.from-indigo-50.to-purple-50 {
+            background: linear-gradient(to bottom right, #1e1b4b, #5b21b6);
+        }
+
+        .bg-gradient-to-r.from-blue-50.to-indigo-50 {
+            background: linear-gradient(to right, #1e3a8a, #3730a3);
+        }
+
+        .bg-gradient-to-r.from-green-50.to-teal-50 {
+            background: linear-gradient(to right, #064e3b, #134e4a);
+        }
+
+        .bg-gradient-to-br.from-purple-50.to-pink-50 {
+            background: linear-gradient(to bottom right, #5b21b6, #9d174d);
+        }
+
+        .bg-gradient-to-br.from-yellow-50.to-amber-50 {
+            background: linear-gradient(to bottom right, #713f12, #92400e);
+        }
+
+        .bg-gradient-to-br.from-gray-50.to-blue-gray-50 {
+            background: linear-gradient(to bottom right, #1f2937, #374151);
+        }
+
+        .bg-gradient-to-br.from-orange-50.to-red-50 {
+            background: linear-gradient(to bottom right, #7c2d12, #991b1b);
+        }
+
+        /* Темные варианты цветов границ */
+        .border-indigo-100 {
+            border-color: #4338ca;
+        }
+
+        .border-blue-100 {
+            border-color: #1e40af;
+        }
+
+        .border-green-100 {
+            border-color: #047857;
+        }
+
+        .border-purple-100 {
+            border-color: #7e22ce;
+        }
+
+        .border-yellow-100 {
+            border-color: #92400e;
+        }
+
+        .border-gray-100 {
+            border-color: #4b5563;
+        }
+
+        .border-orange-100 {
+            border-color: #9a3412;
+        }
+
+        .border-red-100 {
+            border-color: #991b1b;
+        }
+
+        /* Темные варианты текста */
+        .text-gray-600 {
+            color: #cbd5e1;
+        }
+
+        .text-gray-800 {
+            color: #f8fafc;
+        }
+
+        .text-indigo-700 {
+            color: #a78bfa;
+        }
+
+        .text-blue-700 {
+            color: #93c5fd;
+        }
+
+        .text-yellow-700 {
+            color: #fcd34d;
+        }
+
+        .text-purple-700 {
+            color: #c4b5fd;
+        }
+
+        /* Темные варианты фонов иконок */
+        .bg-indigo-100 {
+            background-color: #4c1d95;
+        }
+
+        .bg-blue-100 {
+            background-color: #1e40af;
+        }
+
+        .bg-green-100 {
+            background-color: #065f46;
+        }
+
+        .bg-purple-100 {
+            background-color: #5b21b6;
+        }
+
+        .bg-yellow-100 {
+            background-color: #92400e;
+        }
+
+        .bg-gray-100 {
+            background-color: #4b5563;
+        }
+
+        .bg-orange-100 {
+            background-color: #9a3412;
+        }
+
+        .bg-red-100 {
+            background-color: #991b1b;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(to right, #5b21b6, #7c3aed);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Переключатель темы */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #7c3aed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col dark-mode">
+    <header class="text-white shadow-xl">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-code text-3xl mr-3 text-yellow-300"></i>
+                    <h1 class="text-3xl font-bold">Программурки</h1>
+                </div>
+                <div class="flex space-x-1 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
+                    <button onclick="openTab(event, 'channels')"
+                        class="nav-tab active px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-hashtag mr-2"></i>Каналы
+                    </button>
+                    <button onclick="openTab(event, 'meetings')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-users mr-2"></i>Встречи
+                    </button>
+                    <button onclick="openTab(event, 'projects')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-project-diagram mr-2"></i>Проекты
+                    </button>
+                    <button onclick="openTab(event, 'rules')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-scroll mr-2"></i>Правила
+                    </button>
+                    <button onclick="openTab(event, 'resources')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-book mr-2"></i>Ресурсы
+                    </button>
+                    <button onclick="openTab(event, 'tools')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-tools mr-2"></i>Инструменты
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <!-- Каналы -->
+        <div id="channels" class="tab-content active">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-hashtag text-indigo-400 mr-3"></i>Каналы и их назначение
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Продленка</h3>
+                        <p class="text-gray-400">Для свободной деятельности (сон, еда, разговоры)</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Англо-кись</h3>
+                        <p class="text-gray-400">Обсуждение любых вопросов по английскому</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Альфа-программурки</h3>
+                        <p class="text-gray-400">Программирование игр (их перечень можно найти во вкладке Ресурсы)</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Бета-программурки</h3>
+                        <p class="text-gray-400">Программируем не игру (теория, другие проекты)</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Омега-программурки</h3>
+                        <p class="text-gray-400">Иная полезная деятельность (другая учеба, не связанная с
+                            программированием, работа и т.д.)</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Программурки</h3>
+                        <p class="text-gray-400">Для собраний и встреч</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Дам-гулям</h3>
+                        <p class="text-gray-400">Прогулки</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Америкошки</h3>
+                        <p class="text-gray-400">Для самостоятельного обучения по английскому</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Терпимурки</h3>
+                        <p class="text-gray-400">Разговоры о еде, обсуждение рецептов и рационов</p>
+                    </div>
+                    <div class="card p-5 rounded-lg border">
+                        <h3 class="font-bold text-indigo-400 mb-2">Америкиски и Дам-Стыдам</h3>
+                        <p class="text-gray-400">Свободные аудитории для общения (чтобы не отвлекать тех, кто учится в
+                            других каналах)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Встречи -->
+        <div id="meetings" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-users text-indigo-400 mr-3"></i>Ежедневная встреча
+                </h2>
+                <div class="bg-slate-700 p-6 rounded-lg border border-slate-600">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-indigo-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Время встречи</h3>
+                            <p class="text-gray-400 mb-4">Каждый день в <span class="font-bold text-indigo-400">21:00 по
+                                    МСК</span> в канале <span class="font-bold">Программурки</span></p>
+                            <div class="bg-yellow-900 bg-opacity-30 border-l-4 border-yellow-500 p-4">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-info-circle text-yellow-400"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-yellow-200">
+                                            Будьте готовы поделиться, как прошел ваш день. Подготовьте краткий отчет о
+                                            своих достижениях и планах.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-calendar-check text-indigo-400 mr-3"></i>Система дежурства
+                </h2>
+                <div class="bg-slate-700 p-6 rounded-lg border border-slate-600">
+                    <div class="flex items-center">
+                        <div class="bg-green-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-clipboard-list text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Протоколы дежурств</h3>
+                            <p class="text-gray-400 mb-4">Ознакомьтесь со своими обязанностями, протоклами встреч.</p>
+                            <a href="https://docs.google.com/document/d/11y1FSrPvQJJB_WoTcOVdRh-umpG1GKnIBPJE9FClPWA/edit?tab=t.0"
+                                class="btn inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Проекты -->
+        <div id="projects" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-project-diagram text-indigo-400 mr-3"></i>Совместные проекты
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-900 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">GitHub репозитории</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Все наши проекты хранятся на GitHub. Вы можете просмотреть код,
+                            предложить изменения или присоединиться к разработке.</p>
+                        <a href="https://github.com/orgs/programmurki/repositories"
+                            class="btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fab fa-github mr-2"></i> Перейти к проектам
+                        </a>
+                    </div>
+
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-gamepad text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Имеющиеся там проекты:</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Биоритмы, их корреляция</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Корреляция между лунным циклом и менструациями</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Вероятностяи</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Стеганография</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Алгоритмы сжатия данных</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">Фракталы</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-400 mr-2"></i>
+                                <span class="text-gray-400">ТЕКУЩИЙ ПРОЕКТ: Теория игр</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правила -->
+        <div id="rules" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-scroll text-indigo-400 mr-3"></i>Правила знакомства с новеньким
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Обязательные действия -->
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Обязательные действия</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Немедленно добавить девочку в друзья</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Представиться подробно, подготовив интересный рассказ о
+                                    себе</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Иметь при себе список вопросов для знакомства</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Улыбаться и проявлять искренний интерес</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Объяснять шутки и рассказывать о проектах</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Внимательно слушать и задавать дополнительные вопросы</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Ознакомить собеседницу с правилами</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Следить за формулировками и стилем общения</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">В случае опоздания объяснить причину</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Если необходимо уйти - проинформировать об этом
+                                    спокойно</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Запрещенные действия -->
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-times-circle text-red-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Запрещенные действия</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Проявлять незаинтересованность</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Молчать и не поддерживать разговор</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Общаться на неуместные темы</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Заниматься личными делами во время общения</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Спорить или ругаться</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Создавать чувство вины за длительность общения</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Оскорблять друг друга в целях развлечения</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ресурсы -->
+        <div id="resources" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-book text-indigo-400 mr-3"></i>Ссылки для самостоятельного обучения
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="card p-5 rounded-lg border border-slate-600">
+                        <h3 class="font-bold text-blue-400 mb-2 flex items-center">
+                            <i class="fab fa-html5 text-orange-400 mr-2"></i> HTML для начинающих
+                        </h3>
+                        <p class="text-gray-400 mb-3">Основы HTML с нуля с практическими примерами</p>
+                        <a href="https://code-basics.com/ru/languages/html"
+                            class="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                            Перейти <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="card p-5 rounded-lg border border-slate-600">
+                        <h3 class="font-bold text-blue-400 mb-2 flex items-center">
+                            <i class="fab fa-css3-alt text-blue-400 mr-2"></i> CSS для начинающих
+                        </h3>
+                        <p class="text-gray-400 mb-3">Изучение CSS с нуля с практическими заданиями</p>
+                        <a href="https://code-basics.com/ru/languages/css"
+                            class="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                            Перейти <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="card p-5 rounded-lg border border-slate-600">
+                        <h3 class="font-bold text-yellow-400 mb-2 flex items-center">
+                            <i class="fab fa-js-square text-yellow-400 mr-2"></i> JavaScript для детей
+                        </h3>
+                        <p class="text-gray-400 mb-3">Увлекательное введение в JavaScript (часть 1)</p>
+                        <a href="https://library-it.com/wp-content/uploads/2021/01/javascript-dlia-dietiei.-samouc-nik-morghan.pdf"
+                            class="text-yellow-400 hover:text-yellow-300 text-sm font-medium inline-flex items-center">
+                            Скачать PDF <i class="fas fa-download ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="card p-5 rounded-lg border border-slate-600">
+                        <h3 class="font-bold text-yellow-400 mb-2 flex items-center">
+                            <i class="fab fa-youtube text-red-400 mr-2"></i> Видеоурок по JavaScript
+                        </h3>
+                        <p class="text-gray-400 mb-3">Наглядное объяснение основ JavaScript</p>
+                        <a href="https://youtu.be/CxgOKJh4zWE?si=nyqbrjYeZD_i8sY8"
+                            class="text-yellow-400 hover:text-yellow-300 text-sm font-medium inline-flex items-center">
+                            Смотреть <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+    <h2 class="text-2xl font-bold mb-4 flex items-center">
+        <i class="fas fa-gamepad text-indigo-400 mr-3"></i>Игры для самостоятельной разработки
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Murka Sensei -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-cat text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Murka Sensei</h3>
+        </div>
+        
+        <!-- Arkanoid -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-table-tennis text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Arkanoid</h3>
+        </div>
+        
+        <!-- Paratrooper -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-parachute-box text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Paratrooper</h3>
+        </div>
+        
+       <!-- Snake -->
+<div class="card p-4 rounded-lg border border-slate-600 text-center">
+    <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+        <i class="fas fa-ghost text-purple-400"></i>
+    </div>
+    <h3 class="font-bold text-purple-400 text-sm">Snake</h3>
+</div>
+
+<!-- Digger -->
+<div class="card p-4 rounded-lg border border-slate-600 text-center">
+    <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+        <i class="fas fa-helmet-safety text-purple-400"></i>
+    </div>
+    <h3 class="font-bold text-purple-400 text-sm">Digger</h3>
+</div>
+        
+        <!-- Sokoban -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-boxes text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Sokoban</h3>
+        </div>
+        
+        <!-- Elevator -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-elevator text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Elevator</h3>
+        </div>
+        
+        <!-- Lode Runner -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-running text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Lode Runner</h3>
+        </div>
+        
+        <!-- Xonix -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-border-all text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Xonix</h3>
+        </div>
+        
+        <!-- Tetris -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-th-large text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Tetris</h3>
+        </div>
+        
+        <!-- Jumpman -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-person-running text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Jumpman</h3>
+        </div>
+        
+        <!-- Boulder Dash -->
+        <div class="card p-4 rounded-lg border border-slate-600 text-center">
+            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-gem text-purple-400"></i>
+            </div>
+            <h3 class="font-bold text-purple-400 text-sm">Boulder Dash</h3>
+        </div>
+    </div>
+</div>
+        <!-- Инструменты -->
+        <div id="tools" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-tools text-indigo-400 mr-3"></i>Активно используемые сервисы
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-code text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Visual Studio Code</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Мощный редактор кода с поддержкой множества языков
+                            программирования.</p>
+                        <a href="https://code.visualstudio.com/"
+                            class="btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            <i class="fas fa-download mr-2"></i> Скачать
+                        </a>
+                    </div>
+
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-gray-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">GitHub</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Платформа для хостинга IT-проектов и их совместной разработки.</p>
+                        <a href="https://github.com/"
+                            class="btn inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
+                            <i class="fab fa-github mr-2"></i> Перейти
+                        </a>
+                    </div>
+
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-chalkboard text-orange-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Miro</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Онлайн-доска для совместной работы и визуализации идей.</p>
+                        <a href="https://miro.com/"
+                            class="btn inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700">
+                            <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="bg-yellow-900 bg-opacity-30 border-l-4 border-yellow-500 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-info-circle text-yellow-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-200">
+                            Для освоения указанных серверов необходимо не постесняться обратиться к дежурному, вам найдут
+                            человека,
+                            который обязательно поможет, и будет очень этому рад!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Функция для переключения вкладок
+        function openTab(evt, tabName) {
+            // Скрыть все tab-content
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Убрать active у всех кнопок
+            const tabButtons = document.getElementsByClassName("nav-tab");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Показать текущую вкладку и сделать кнопку активной
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // По умолчанию показываем первую вкладку
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("channels").classList.add("active");
+        });
+    </script>
+</body>
+
+</html>
