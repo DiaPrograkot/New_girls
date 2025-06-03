@@ -269,6 +269,14 @@
                         class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
                         <i class="fas fa-tools mr-2"></i>Инструменты
                     </button>
+                    <button onclick="openTab(event, 'archive')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-archive mr-2"></i>Архив
+                    </button>
+                    <button onclick="openTab(event, 'dictionary')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-book-open mr-2"></i>Словарь
+                    </button>
                 </div>
             </div>
         </div>
@@ -287,8 +295,8 @@
                         <p class="text-gray-400">Для свободной деятельности (сон, еда, разговоры)</p>
                     </div>
                     <div class="card p-5 rounded-lg border">
-                        <h3 class="font-bold text-indigo-400 mb-2">Англо-кись</h3>
-                        <p class="text-gray-400">Обсуждение любых вопросов по английскому</p>
+                        <h3 class="font-bold text-indigo-400 mb-2">Новамурки</h3>
+                        <p class="text-gray-400">Знакомство с новенькими девочками</p>
                     </div>
                     <div class="card p-5 rounded-lg border">
                         <h3 class="font-bold text-indigo-400 mb-2">Альфа-программурки</h3>
@@ -367,14 +375,14 @@
                 </h2>
                 <div class="bg-slate-700 p-6 rounded-lg border border-slate-600">
                     <div class="flex items-center">
-                        <div class="bg-green-900 p-3 rounded-full mr-4">
-                            <i class="fas fa-clipboard-list text-green-400 text-xl"></i>
+                        <div class="bg-indigo-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-clipboard-list text-indigo-400 text-xl"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-lg mb-2">Протоколы дежурств</h3>
                             <p class="text-gray-400 mb-4">Ознакомьтесь со своими обязанностями, протоклами встреч.</p>
                             <a href="https://docs.google.com/document/d/11y1FSrPvQJJB_WoTcOVdRh-umpG1GKnIBPJE9FClPWA/edit?tab=t.0"
-                                class="btn inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                class="btn inline-flex items-center px-4 py-2 bg-indigo-900 text-white rounded-lg hover:bg-indigo-900">
                                 <i class="fas fa-external-link-alt mr-2"></i> Открыть
                             </a>
                         </div>
@@ -392,15 +400,15 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="card p-6 rounded-lg border border-slate-600">
                         <div class="flex items-center mb-4">
-                            <div class="bg-blue-900 p-3 rounded-full mr-4">
-                                <i class="fab fa-github text-blue-400 text-xl"></i>
+                            <div class="bg-purple-900 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-white-400 text-xl"></i>
                             </div>
                             <h3 class="font-bold text-lg">GitHub репозитории</h3>
                         </div>
                         <p class="text-gray-400 mb-4">Все наши проекты хранятся на GitHub. Вы можете просмотреть код,
                             предложить изменения или присоединиться к разработке.</p>
                         <a href="https://github.com/orgs/programmurki/repositories"
-                            class="btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            class="btn inline-flex items-center px-4 py-2 bg-purple-900 text-white rounded-lg hover:bg-purple-900">
                             <i class="fab fa-github mr-2"></i> Перейти к проектам
                         </a>
                     </div>
@@ -408,7 +416,7 @@
                     <div class="card p-6 rounded-lg border border-slate-600">
                         <div class="flex items-center mb-4">
                             <div class="bg-purple-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-gamepad text-purple-400 text-xl"></i>
+                                <i class="fas fa-gamepad text-white-400 text-xl"></i>
                             </div>
                             <h3 class="font-bold text-lg">Имеющиеся там проекты:</h3>
                         </div>
@@ -580,22 +588,22 @@
                         </a>
                     </div>
                     <div class="card p-5 rounded-lg border border-slate-600">
-                        <h3 class="font-bold text-yellow-400 mb-2 flex items-center">
-                            <i class="fab fa-js-square text-yellow-400 mr-2"></i> JavaScript для детей
+                        <h3 class="font-bold text-blue-400 mb-2 flex items-center">
+                            <i class="fab fa-js-square text-blue-400 mr-2"></i> JavaScript для детей
                         </h3>
                         <p class="text-gray-400 mb-3">Увлекательное введение в JavaScript (часть 1)</p>
                         <a href="https://library-it.com/wp-content/uploads/2021/01/javascript-dlia-dietiei.-samouc-nik-morghan.pdf"
-                            class="text-yellow-400 hover:text-yellow-300 text-sm font-medium inline-flex items-center">
+                            class="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
                             Скачать PDF <i class="fas fa-download ml-1"></i>
                         </a>
                     </div>
                     <div class="card p-5 rounded-lg border border-slate-600">
-                        <h3 class="font-bold text-yellow-400 mb-2 flex items-center">
-                            <i class="fab fa-youtube text-red-400 mr-2"></i> Видеоурок по JavaScript
+                        <h3 class="font-bold text-blue-400 mb-2 flex items-center">
+                            <i class="fab fa-youtube text-blue-400 mr-2"></i> Видеоурок по JavaScript
                         </h3>
                         <p class="text-gray-400 mb-3">Наглядное объяснение основ JavaScript</p>
                         <a href="https://youtu.be/CxgOKJh4zWE?si=nyqbrjYeZD_i8sY8"
-                            class="text-yellow-400 hover:text-yellow-300 text-sm font-medium inline-flex items-center">
+                            class="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
                             Смотреть <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
@@ -603,107 +611,113 @@
             </div>
 
             <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
-    <h2 class="text-2xl font-bold mb-4 flex items-center">
-        <i class="fas fa-gamepad text-indigo-400 mr-3"></i>Игры для самостоятельной разработки
-    </h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Murka Sensei -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-cat text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Murka Sensei</h3>
-        </div>
-        
-        <!-- Arkanoid -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-table-tennis text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Arkanoid</h3>
-        </div>
-        
-        <!-- Paratrooper -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-parachute-box text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Paratrooper</h3>
-        </div>
-        
-       <!-- Snake -->
-<div class="card p-4 rounded-lg border border-slate-600 text-center">
-    <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-        <i class="fas fa-ghost text-purple-400"></i>
-    </div>
-    <h3 class="font-bold text-purple-400 text-sm">Snake</h3>
-</div>
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-gamepad text-indigo-400 mr-3"></i>Игры для самостоятельной разработки
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Murka Sensei -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-cat text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm mb-2">Murka Commander</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="https://github.com/alexejdeveloper/igs-commander"
+                                class="text-xs bg-purple-800 hover:bg-purple-700 rounded px-2 py-1 text-white">
+                                <i class="fab fa-github mr-1"></i> Репозиторий
+                            </a>
+                        </div>
+                    </div>
 
-<!-- Digger -->
-<div class="card p-4 rounded-lg border border-slate-600 text-center">
-    <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-        <i class="fas fa-helmet-safety text-purple-400"></i>
-    </div>
-    <h3 class="font-bold text-purple-400 text-sm">Digger</h3>
-</div>
-        
-        <!-- Sokoban -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-boxes text-purple-400"></i>
+                    <!-- Arkanoid -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-table-tennis text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Arkanoid</h3>
+                    </div>
+
+                    <!-- Paratrooper -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-parachute-box text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Paratrooper</h3>
+                    </div>
+
+                    <!-- Snake -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-ghost text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Snake</h3>
+                    </div>
+
+                    <!-- Digger -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-helmet-safety text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Digger</h3>
+                    </div>
+
+                    <!-- Sokoban -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-boxes text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Sokoban</h3>
+                    </div>
+
+                    <!-- Elevator -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-elevator text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Elevator</h3>
+                    </div>
+
+                    <!-- Lode Runner -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-running text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Lode Runner</h3>
+                    </div>
+
+                    <!-- Xonix -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-border-all text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Xonix</h3>
+                    </div>
+
+                    <!-- Tetris -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-th-large text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Tetris</h3>
+                    </div>
+
+                    <!-- Jumpman -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-person-running text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Jumpman</h3>
+                    </div>
+
+                    <!-- Boulder Dash -->
+                    <div class="card p-4 rounded-lg border border-slate-600 text-center">
+                        <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-gem text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-purple-400 text-sm">Boulder Dash</h3>
+                    </div>
+                </div>
             </div>
-            <h3 class="font-bold text-purple-400 text-sm">Sokoban</h3>
-        </div>
-        
-        <!-- Elevator -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-elevator text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Elevator</h3>
-        </div>
-        
-        <!-- Lode Runner -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-running text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Lode Runner</h3>
-        </div>
-        
-        <!-- Xonix -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-border-all text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Xonix</h3>
-        </div>
-        
-        <!-- Tetris -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-th-large text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Tetris</h3>
-        </div>
-        
-        <!-- Jumpman -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-person-running text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Jumpman</h3>
-        </div>
-        
-        <!-- Boulder Dash -->
-        <div class="card p-4 rounded-lg border border-slate-600 text-center">
-            <div class="bg-purple-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                <i class="fas fa-gem text-purple-400"></i>
-            </div>
-            <h3 class="font-bold text-purple-400 text-sm">Boulder Dash</h3>
-        </div>
-    </div>
-</div>
         </div>
         <!-- Инструменты -->
         <div id="tools" class="tab-content">
@@ -711,22 +725,36 @@
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-tools text-indigo-400 mr-3"></i>Активно используемые сервисы
                 </h2>
-                <div class="grid md:grid-cols-3 gap-6">
+                <div class="grid md:grid-cols-2 gap-6">
                     <div class="card p-6 rounded-lg border border-slate-600">
                         <div class="flex items-center mb-4">
-                            <div class="bg-blue-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-code text-blue-400 text-xl"></i>
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-code text-gray-300 text-xl"></i>
                             </div>
                             <h3 class="font-bold text-lg">Visual Studio Code</h3>
                         </div>
                         <p class="text-gray-400 mb-4">Мощный редактор кода с поддержкой множества языков
                             программирования.</p>
                         <a href="https://code.visualstudio.com/"
-                            class="btn inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            class="btn inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
                             <i class="fas fa-download mr-2"></i> Скачать
                         </a>
                     </div>
 
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-alt text-gray-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Google</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Нами был создан общий аккаунт, позволяющий совместно использовать
+                            его возможности. Ведем с его помощью Google Календарь</p>
+                        <a href="https://calendar.google.com/calendar/"
+                            class="btn inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
+                            <i class="fas fa-external-link-alt mr-2"></i> Подключиться
+                        </a>
+                    </div>
                     <div class="card p-6 rounded-lg border border-slate-600">
                         <div class="flex items-center mb-4">
                             <div class="bg-gray-700 p-3 rounded-full mr-4">
@@ -743,18 +771,18 @@
 
                     <div class="card p-6 rounded-lg border border-slate-600">
                         <div class="flex items-center mb-4">
-                            <div class="bg-orange-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-chalkboard text-orange-400 text-xl"></i>
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-chalkboard text-gray-300 text-xl"></i>
                             </div>
                             <h3 class="font-bold text-lg">Miro</h3>
                         </div>
                         <p class="text-gray-400 mb-4">Онлайн-доска для совместной работы и визуализации идей.</p>
                         <a href="https://miro.com/"
-                            class="btn inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700">
+                            class="btn inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
                             <i class="fas fa-external-link-alt mr-2"></i> Открыть
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="bg-yellow-900 bg-opacity-30 border-l-4 border-yellow-500 p-4">
@@ -764,13 +792,357 @@
                     </div>
                     <div class="ml-3">
                         <p class="text-sm text-yellow-200">
-                            Для освоения указанных сервисов необходимо не постесняться обратиться к дежурному, вам найдут
-                            человека,
-                            который обязательно поможет, и будет очень этому рад!
+                            Для освоения этих сервисов не стесняйтесь обратиться к дежурному — вам найдут человека,
+                            который с радостью поможет!
                         </p>
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div id="archive" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-archive text-indigo-400 mr-3"></i>Архив активностей
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-utensils text-green-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Дневник питания</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Архив записей о питании и рационах участников.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1x6SR4TLmiS5UfmfFbepWhJsxD4l4Cn3gEKHj1fTTA5o/edit?gid=0#gid=0"
+                            class="btn inline-flex items-center px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800">
+                            <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                        </a>
+                    </div>
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-700 p-3 rounded-full mr-4">
+                                <i class="fab fa-html5 text-blue-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Конспект HTML и CSS</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Материалы по основам HTML и CSS для изучения.</p>
+                        <a href="https://docs.google.com/document/d/1HEc5226G_udTu5SGdN1WGfuWZzgZREJLJLTVF7XltF4/edit?tab=t.0"
+                            class="btn inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800">
+                            <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                        </a>
+                    </div>
+
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-700 p-3 rounded-full mr-4">
+                                <i class="fab fa-js-square text-yellow-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Конспект JavaScript</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Материалы по основам JavaScript для изучения.</p>
+                        <a href="https://docs.google.com/document/d/137W15aoexhCxiaG_TfjMreLIA41OgKgDrR6L3h5gEnw/edit?tab=t.0"
+                            class="btn inline-flex items-center px-4 py-2 bg-yellow-700 text-white rounded-lg hover:bg-yellow-800">
+                            <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                        </a>
+                    </div>
+
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-paint-brush text-purple-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Стихи и рисунки</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Архив творческих работ участников - стихи и рисунки.</p>
+                        <a href="https://drive.google.com/drive/folders/1GtaNExs3vigLAXAupn3_C-OF9_hd9fGG"
+                            class="btn inline-flex items-center px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                            <i class="fas fa-external-link-alt mr-2"></i> Открыть
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Словарь -->
+        <!-- Словарь -->
+<div id="dictionary" class="tab-content">
+    <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <i class="fas fa-book-open text-indigo-400 mr-3"></i>Словарь программурок
+        </h2>
+        
+        <!-- Категории -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Колонка 1 -->
+            <div class="space-y-4">
+                <!-- Эмоции -->
+                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                        <i class="fas fa-heart-crack mr-2"></i> Базовые эмоции
+                    </h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <!-- Элементы словаря -->
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">тревога</div>
+                                <div class="text-sm text-gray-400 mt-1">Дрожулька</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="тревога - дрожулька">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">страх</div>
+                                <div class="text-sm text-gray-400 mt-1">Красная шапочка</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="страх - красная шапочка">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">стыд</div>
+                                <div class="text-sm text-gray-400 mt-1">Опась</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="стыд - опась">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">обида</div>
+                                <div class="text-sm text-gray-400 mt-1">Бибуба</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="обида - бибуба">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">злость</div>
+                                <div class="text-sm text-gray-400 mt-1">Душ не помогает</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="злость - душ не помогает">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">злость на себя</div>
+                                <div class="text-sm text-gray-400 mt-1">Кусаю свой хвост</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="злость на себя - кусаю свой хвост">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                
+                <!-- Коммуникация -->
+                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                        <i class="fas fa-comments mr-2"></i> Коммуникация
+                    </h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">хочу помолчать</div>
+                                <div class="text-sm text-gray-400 mt-1">Тишь</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="хочу помолчать - тишь">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">просто поболтать</div>
+                                <div class="text-sm text-gray-400 mt-1">Ротына</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="просто поболтать - ротына">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">недоверие</div>
+                                <div class="text-sm text-gray-400 mt-1">Мафура</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="недоверие - мафура">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">я тупая</div>
+                                <div class="text-sm text-gray-400 mt-1">Я путя</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я тупая - я путя">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Колонка 2 -->
+            <div class="space-y-4">
+                <!-- Поддержка -->
+                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                        <i class="fas fa-hands-helping mr-2"></i> Запросы поддержки
+                    </h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">мне нужна помощь</div>
+                                <div class="text-sm text-gray-400 mt-1">Свет выключили</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="мне нужна помощь - свет выключили">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">у меня серьезные проблемы</div>
+                                <div class="text-sm text-gray-400 mt-1">Бомба</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="у меня серьезные проблемы - бомба">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">я на пределе</div>
+                                <div class="text-sm text-gray-400 mt-1">Тонкие нити</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я на пределе - тонкие нити">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">мне плохо, но я не хочу вас напрягать</div>
+                                <div class="text-sm text-gray-400 mt-1">Погода сегодня какая-то тяжелая</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="мне плохо, но я не хочу вас напрягать - погода сегодня какая-то тяжелая">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">хочу поплакать с кем-то</div>
+                                <div class="text-sm text-gray-400 mt-1">Кто хочет подышать?</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="хочу поплакать с кем-то - кто хочет подышать?">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">мне очень грустно, я не хочу занимать ваше время, у меня нет конкретной проблемы, я просто хочу чтобы вы побыли рядом со мной</div>
+                                <div class="text-sm text-gray-400 mt-1">Я лера</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="мне очень грустно... - я лера">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Разное -->
+                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i> Повседневное
+                    </h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">хочу вредной еды</div>
+                                <div class="text-sm text-gray-400 mt-1">Несерьезное желание</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="хочу вредной еды - несерьезное желание">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">хочу легкого дофамина</div>
+                                <div class="text-sm text-gray-400 mt-1">Хочу дельфина</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="хочу легкого дофамина - хочу дельфина">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">усталость</div>
+                                <div class="text-sm text-gray-400 mt-1">Вай вай</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="усталость - вай вай">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                            <div>
+                                <div class="font-medium text-indigo-300">я срочно хочу поделиться</div>
+                                <div class="text-sm text-gray-400 mt-1">Эгегейка</div>
+                            </div>
+                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я срочно хочу поделиться - эгегейка">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Функция для копирования текста
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const text = this.getAttribute('data-text');
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = this.querySelector('i');
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check');
+                
+                // Временная подсказка
+                const tooltip = document.createElement('div');
+                tooltip.className = 'absolute bg-slate-800 text-white text-xs px-2 py-1 rounded -mt-8';
+                tooltip.textContent = 'Скопировано!';
+                this.appendChild(tooltip);
+                
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                    tooltip.remove();
+                }, 1500);
+            });
+        });
+    });
+</script>
+        </div>
+        </div>
         </div>
     </main>
 
