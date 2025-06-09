@@ -277,6 +277,10 @@
                         class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
                         <i class="fas fa-book-open mr-2"></i>Словарь
                     </button>
+                    <button onclick="openTab(event, 'contacts')"
+                        class="nav-tab px-4 py-2 rounded-t-lg bg-white bg-opacity-10 font-medium text-sm whitespace-nowrap">
+                        <i class="fas fa-address-book mr-2"></i>Контакты
+                    </button>
                 </div>
             </div>
         </div>
@@ -864,282 +868,392 @@
             </div>
         </div>
         <!-- Словарь -->
-<div id="dictionary" class="tab-content">
-    <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-            <i class="fas fa-book-open text-indigo-400 mr-3"></i>Словарь программурок
-        </h2>
-        
-        <!-- Категории -->
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Колонка 1 -->
-            <div class="space-y-4">
-                <!-- Эмоции -->
-                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
-                        <i class="fas fa-heart-crack mr-2"></i> Базовые эмоции
-                    </h3>
-                    <div class="grid grid-cols-1 gap-2">
-                        <!-- Элементы словаря -->
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">тревога</div>
-                                <div class="text-sm text-gray-400 mt-1">Дрожулька</div>
+        <div id="dictionary" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-book-open text-indigo-400 mr-3"></i>Словарь программурок
+                </h2>
+
+                <!-- Категории -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Колонка 1 -->
+                    <div class="space-y-4">
+                        <!-- Эмоции -->
+                        <div
+                            class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                            <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                                <i class="fas fa-heart-crack mr-2"></i> Базовые эмоции
+                            </h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <!-- Элементы словаря -->
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">тревога</div>
+                                        <div class="text-sm text-gray-400 mt-1">Дрожулька</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="дрожулька">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">страх</div>
+                                        <div class="text-sm text-gray-400 mt-1">Красная шапочка</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="красная шапочка">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">стыд</div>
+                                        <div class="text-sm text-gray-400 mt-1">Опась</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="опась">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">обида</div>
+                                        <div class="text-sm text-gray-400 mt-1">Бибуба</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="бибуба">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">злость</div>
+                                        <div class="text-sm text-gray-400 mt-1">Душ не помогает</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="душ не помогает">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">злость на себя</div>
+                                        <div class="text-sm text-gray-400 mt-1">Кусаю свой хвост</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="кусаю свой хвост">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+                                <br>
                             </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="дрожулька">
-                                <i class="far fa-copy"></i>
-                            </button>
                         </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">страх</div>
-                                <div class="text-sm text-gray-400 mt-1">Красная шапочка</div>
+
+                        <!-- Коммуникация -->
+                        <div
+                            class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                            <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                                <i class="fas fa-comments mr-2"></i> Коммуникация
+                            </h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">хочу помолчать</div>
+                                        <div class="text-sm text-gray-400 mt-1">Тишь</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="тишь">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">просто поболтать</div>
+                                        <div class="text-sm text-gray-400 mt-1">Ротына</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="ротына">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">недоверие</div>
+                                        <div class="text-sm text-gray-400 mt-1">Мафура</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="мафура">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">я тупая</div>
+                                        <div class="text-sm text-gray-400 mt-1">Я путя</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я путя">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="красная шапочка">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">стыд</div>
-                                <div class="text-sm text-gray-400 mt-1">Опась</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="опась">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">обида</div>
-                                <div class="text-sm text-gray-400 mt-1">Бибуба</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="бибуба">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">злость</div>
-                                <div class="text-sm text-gray-400 mt-1">Душ не помогает</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="душ не помогает">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">злость на себя</div>
-                                <div class="text-sm text-gray-400 mt-1">Кусаю свой хвост</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="кусаю свой хвост">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-                
-                <!-- Коммуникация -->
-                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
-                        <i class="fas fa-comments mr-2"></i> Коммуникация
-                    </h3>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">хочу помолчать</div>
-                                <div class="text-sm text-gray-400 mt-1">Тишь</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="тишь">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">просто поболтать</div>
-                                <div class="text-sm text-gray-400 mt-1">Ротына</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="ротына">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">недоверие</div>
-                                <div class="text-sm text-gray-400 mt-1">Мафура</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="мафура">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">я тупая</div>
-                                <div class="text-sm text-gray-400 mt-1">Я путя</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я путя">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Колонка 2 -->
-            <div class="space-y-4">
-                <!-- Поддержка -->
-                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
-                        <i class="fas fa-hands-helping mr-2"></i> Запросы поддержки
-                    </h3>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">мне нужна помощь</div>
-                                <div class="text-sm text-gray-400 mt-1">Свет выключили</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="свет выключили">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">у меня серьезные проблемы</div>
-                                <div class="text-sm text-gray-400 mt-1">Бомба</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="бомба">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">я на пределе</div>
-                                <div class="text-sm text-gray-400 mt-1">Тонкие нити</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="тонкие нити">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">мне плохо, но я не хочу вас напрягать</div>
-                                <div class="text-sm text-gray-400 mt-1">Погода сегодня какая-то тяжелая</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="погода сегодня какая-то тяжелая">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">хочу поплакать с кем-то</div>
-                                <div class="text-sm text-gray-400 mt-1">Кто хочет подышать?</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="кто хочет подышать?">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">мне очень грустно, я не хочу занимать ваше время, у меня нет конкретной проблемы, я просто хочу чтобы вы побыли рядом со мной</div>
-                                <div class="text-sm text-gray-400 mt-1">Я Лера</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я Лера">
-                                <i class="far fa-copy"></i>
-                            </button>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Разное -->
-                <div class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
-                        <i class="fas fa-lightbulb mr-2"></i> Повседневное
-                    </h3>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">хочу вредной еды</div>
-                                <div class="text-sm text-gray-400 mt-1">Несерьезное желание</div>
+
+                    <!-- Колонка 2 -->
+                    <div class="space-y-4">
+                        <!-- Поддержка -->
+                        <div
+                            class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                            <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                                <i class="fas fa-hands-helping mr-2"></i> Запросы поддержки
+                            </h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">мне нужна помощь</div>
+                                        <div class="text-sm text-gray-400 mt-1">Свет выключили</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="свет выключили">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">у меня серьезные проблемы</div>
+                                        <div class="text-sm text-gray-400 mt-1">Бомба</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="бомба">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">я на пределе</div>
+                                        <div class="text-sm text-gray-400 mt-1">Тонкие нити</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="тонкие нити">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">мне плохо, но я не хочу вас напрягать
+                                        </div>
+                                        <div class="text-sm text-gray-400 mt-1">Погода сегодня какая-то тяжелая</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="погода сегодня какая-то тяжелая">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">хочу поплакать с кем-то</div>
+                                        <div class="text-sm text-gray-400 mt-1">Кто хочет подышать?</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="кто хочет подышать?">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">мне очень грустно, я не хочу занимать
+                                            ваше время, у меня нет конкретной проблемы, я просто хочу чтобы вы побыли
+                                            рядом со мной</div>
+                                        <div class="text-sm text-gray-400 mt-1">Я Лера</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="я Лера">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="несерьезное желание">
-                                <i class="far fa-copy"></i>
-                            </button>
                         </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">хочу легкого дофамина</div>
-                                <div class="text-sm text-gray-400 mt-1">Хочу дельфина</div>
+
+                        <!-- Разное -->
+                        <div
+                            class="bg-slate-700 rounded-xl p-5 border border-slate-600 hover:border-indigo-500 transition-all">
+                            <h3 class="font-bold text-lg mb-3 text-indigo-400 flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i> Повседневное
+                            </h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">хочу вредной еды</div>
+                                        <div class="text-sm text-gray-400 mt-1">Несерьезное желание</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="несерьезное желание">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">хочу легкого дофамина</div>
+                                        <div class="text-sm text-gray-400 mt-1">Хочу дельфина</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400"
+                                        data-text="хочу дельфина">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">усталость</div>
+                                        <div class="text-sm text-gray-400 mt-1">Вай вай</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="вай вай">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
+                                    <div>
+                                        <div class="font-medium text-indigo-300">я срочно хочу поделиться</div>
+                                        <div class="text-sm text-gray-400 mt-1">Эгегейка</div>
+                                    </div>
+                                    <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="эгегейка">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="хочу дельфина">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">усталость</div>
-                                <div class="text-sm text-gray-400 mt-1">Вай вай</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="вай вай">
-                                <i class="far fa-copy"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="dictionary-item flex justify-between items-start p-3 hover:bg-slate-600 rounded-lg transition-all">
-                            <div>
-                                <div class="font-medium text-indigo-300">я срочно хочу поделиться</div>
-                                <div class="text-sm text-gray-400 mt-1">Эгегейка</div>
-                            </div>
-                            <button class="copy-btn text-gray-400 hover:text-indigo-400" data-text="эгегейка">
-                                <i class="far fa-copy"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<script>
-    // Функция для копирования текста
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const text = this.getAttribute('data-text');
-            navigator.clipboard.writeText(text).then(() => {
-                const icon = this.querySelector('i');
-                icon.classList.remove('fa-copy');
-                icon.classList.add('fa-check');
-                
-                // Временная подсказка
-                const tooltip = document.createElement('div');
-                tooltip.className = 'absolute bg-slate-800 text-white text-xs px-2 py-1 rounded -mt-8';
-                tooltip.textContent = 'Скопировано!';
-                this.appendChild(tooltip);
-                
-                setTimeout(() => {
-                    icon.classList.remove('fa-check');
-                    icon.classList.add('fa-copy');
-                    tooltip.remove();
-                }, 1500);
+        <!-- Контакты -->
+        <div id="contacts" class="tab-content">
+            <div class="bg-slate-800 rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-address-book text-indigo-400 mr-3"></i>Контактные данные
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Основные контакты -->
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-tie text-indigo-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Контакты</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Murka Sensei (Искатель) в Discord: murka_sensei</p>
+                    </div>
+
+                    <!-- Каналы -->
+                    <div class="card p-6 rounded-lg border border-slate-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-bullhorn text-indigo-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Телеграм-каналы</h3>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition-all">
+                                <h4 class="font-medium text-indigo-300 mb-1">Срочные объявления</h4>
+                                <a href="https://t.me/+mdbs79SZC3I5YjQy" target="_blank"
+                                    class="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Перейти
+                                </a>
+                            </div>
+
+                            <div class="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition-all">
+                                <h4 class="font-medium text-indigo-300 mb-1">Важные ссылки</h4>
+                                <a href="https://t.me/+F-zDTK5I7cQwMDA6" target="_blank"
+                                    class="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Перейти
+                                </a>
+                            </div>
+
+                            <div class="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition-all">
+                                <h4 class="font-medium text-indigo-300 mb-1">Рисунки</h4>
+                                <a href="https://t.me/+0KQIjc3y_f5mNmNi" target="_blank"
+                                    class="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Перейти
+                                </a>
+                            </div>
+
+                            <div class="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition-all">
+                                <h4 class="font-medium text-indigo-300 mb-1">Стихи</h4>
+                                <a href="https://t.me/+WB41N3wvqBBiNDBi" target="_blank"
+                                    class="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Перейти
+                                </a>
+                            </div>
+
+                            <div class="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition-all">
+                                <h4 class="font-medium text-indigo-300 mb-1">Локальные шутки</h4>
+                                <a href="https://t.me/+u11j-tk5Zs0zODQ6" target="_blank"
+                                    class="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Перейти
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Функция для копирования текста
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const text = this.getAttribute('data-text');
+                    navigator.clipboard.writeText(text).then(() => {
+                        const icon = this.querySelector('i');
+                        icon.classList.remove('fa-copy');
+                        icon.classList.add('fa-check');
+
+                        // Временная подсказка
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'absolute bg-slate-800 text-white text-xs px-2 py-1 rounded -mt-8';
+                        tooltip.textContent = 'Скопировано!';
+                        this.appendChild(tooltip);
+
+                        setTimeout(() => {
+                            icon.classList.remove('fa-check');
+                            icon.classList.add('fa-copy');
+                            tooltip.remove();
+                        }, 1500);
+                    });
+                });
             });
-        });
-    });
-</script>
+        </script>
         </div>
         </div>
         </div>
